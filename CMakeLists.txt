@@ -3,4 +3,4 @@ project(MemoryManager)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(MemoryManager main.cpp)
+add_executable(MemoryManager main.cpp algoNew.cpp algoNew.h)

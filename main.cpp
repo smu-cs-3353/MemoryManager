@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "algoNew.h"
 using std::cout;
 using std::cin;
 using std::endl;
@@ -20,7 +20,9 @@ public:
 
     void* operator new(size_t numBytes) {
         cout << "Allocating Point with new: " << numBytes << " bytes." << endl;
-        return malloc(numBytes);
+        //return malloc(numBytes);
+        return ::new Point;
+
     }
 
     void operator delete(void* ptr) {
@@ -45,11 +47,11 @@ int main() {
     int* ptr01 = new int;
     delete ptr01;
 
-    cout << "Specialized new." << endl;
-    Point* p = new Point();
+    cout << endl << "Specialized new." << endl;
+    Point* p = new Point(2, 3, 4);
     delete p;
 
-    cout << "Specialized new array." << endl;
+    cout << endl << "Specialized new array." << endl;
     Point* pArr = new Point[5] {{1, 2, 3}, {2, 3, 4}};
     delete[] pArr;
 
