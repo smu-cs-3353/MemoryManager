@@ -13,7 +13,7 @@ using std::cin;
 #ifndef MEMORYMANAGER_POINT_H
 #define MEMORYMANAGER_POINT_H
 class Point {
-private:
+protected:
     unsigned int x, y, z;
 public:
     Point (unsigned int xval = 0, unsigned int yval = 0, unsigned int zval = 0):
@@ -28,8 +28,8 @@ public:
 
     void* operator new(size_t numBytes) {
         cout << "Allocating Point with new: " << numBytes << " bytes." << endl;
-        //return malloc(numBytes);
-        return ::new Point;
+        return malloc(numBytes);
+        //return ::new Point;
 
     }
 
