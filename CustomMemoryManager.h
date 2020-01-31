@@ -9,7 +9,7 @@
 class CustomMemoryManager {
 
 private:
-    
+
 public:
 
 };
